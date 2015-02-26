@@ -99,26 +99,47 @@ body>div {
     background-size: 962px auto;
     background-position: center;
     background-repeat: no-repeat;
-    padding-top: 500px;
+    height: 500px;
 }
 .main div {
     position: absolute;
-    top: 35px;
-    left: 45px;
+    top: 40px;
+    left: 40px;
     width: 30%;
     background-color: black;
     color: white;
     opacity: 0.5;
     padding: 20px;
-    height: 80%;
+    height: 430px;
 
 
 }
 
 .footer {
+    display: flex;
     background-color: gray;
+    color: white;
+    padding: 25px;
+    padding-top: 0;
 }
 
 .footer .content {
+    background-color: darkslategrey;
+    padding: 15px;
     display: inline-block;
+    float: left;
+    width: 210px;
+}
+
+.qr-code {
+    height: 75px;
+    width: 75px;
+}
+
+.portfolio {
+    width: 210px;
+}
+
+strong {
+    font-weight: bold;
 }
