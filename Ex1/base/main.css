@@ -86,6 +86,7 @@ body>div {
 }
 
 .nav {
+    /* work in firefox for some reason */
     position: absolute;
     z-index: -1;
     top: 0;
@@ -95,13 +96,34 @@ body>div {
 
 .main {
     position: relative;
-    background-image: url("images/bg1.png");
     background-size: 962px auto;
     background-position: center;
     background-repeat: no-repeat;
     height: 500px;
 }
-.main div {
+
+/* backgrounds depending on page*/
+.bg1 { 
+    background-image: url("images/bg1.png");
+}
+
+.bg2 {
+    background-image: url("images/bg2.png");
+}
+
+.bg3 {
+    background-image: url("images/bg3.png");
+}
+
+.bg4 {
+    background-image: url("images/bg4.png");
+}
+
+.bg4>div {
+    padding-left: 5px; 
+}
+
+.description {
     position: absolute;
     top: 40px;
     left: 40px;
@@ -113,6 +135,55 @@ body>div {
     height: 430px;
 
 
+}
+
+#welcomeMsg {
+    margin-top: 15px;
+    color: #fff;
+    font-size: 45px;
+}
+
+#contactForm {
+    float: left;
+    color: #fff;
+    width: 47%;
+}
+
+#contactForm p {
+    float: left;
+    clear: both;
+    margin-top: 10px;
+}
+
+#contactForm input {
+    float: right;
+    margin-top: 10px;
+}
+
+#contactForm textarea {
+    margin-top: 5px;
+    width: 98%;
+}
+
+#contactDetails {
+    padding: 15px;
+    padding-bottom: 40px; 
+    margin-right: 20px;
+    float: right;
+    width: 45%;
+    background-color: white;
+    opacity: 0.7;
+    font-size: small;
+}
+
+#contactDetails strong {
+    display: inline-block;
+    margin-top: 15px;
+    
+}
+
+.floatRight {
+    float: right;
 }
 
 .footer {
@@ -129,6 +200,10 @@ body>div {
     display: inline-block;
     float: left;
     width: 210px;
+}
+
+.footer .content:nth-child(2) img {
+    width: 18%;
 }
 
 .qr-code {
