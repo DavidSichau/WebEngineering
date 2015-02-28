@@ -182,6 +182,38 @@ body>div {
     
 }
 
+/* Blog page */
+#blogContainer {
+    position: initial;
+    width: initial;
+    margin: auto;
+    top: 0px;
+    left: 0px;
+    background-color: transparent;
+}
+
+.blogEntries img {
+    float: left;
+    width: 30%;
+    margin: 15px;
+}
+
+.blogEntries li {
+    display: inline-block;
+    vertical-align: top;
+    width: 45%;
+    height: 40%;
+    float: left;
+    margin: 10px;
+    color: black;
+}
+
+.blogEntries div {
+    background-color: gray;
+}
+
+/* END Blog page */
+
 .floatRight {
     float: right;
 }
