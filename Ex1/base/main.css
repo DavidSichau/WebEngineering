@@ -222,6 +222,47 @@ body>div {
 
 /* END Blog page */
 
+/* BEGIN portfolio */
+
+#portfolio {
+    padding-left: 20px;
+    padding-top: 20px;
+
+
+
+
+
+}
+
+#portfolio img {
+    float: left;
+    width: 100%;
+    margin-right:  15px;
+    margin-bottom: 15px;
+}
+
+#portfolio li {
+    display: inline-block;
+    vertical-align: top;
+    float: left;
+    background-color: #ffffff;
+    margin-bottom: 20px;
+    margin-right: 20px;
+}
+
+#portfolio li > div {
+    width: 215px;
+    height: 220px;
+}
+#portfolio li  div div {
+    padding: 20px;
+    line-height: 1.5em;
+}
+
+
+
+/* END Portfolio */
+
 .floatRight {
     float: right;
 }
