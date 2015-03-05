@@ -190,27 +190,34 @@ body>div {
     margin: auto;
     top: 0px;
     left: 0px;
+    padding: 10px;
     background-color: transparent;
 }
 
 .blogEntries img {
     float: left;
     width: 30%;
-    margin: 15px;
+    margin-right:  15px;
+    margin-bottom: 15px;
 }
 
 .blogEntries li {
     display: inline-block;
     vertical-align: top;
-    width: 45%;
-    height: 40%;
     float: left;
     margin: 10px;
     color: black;
+    opacity: 0.95;
+    background-color: #ffffff;
 }
 
-.blogEntries div {
-    background-color: gray;
+.blogEntries > div {
+    margin: 20px;
+}
+.blogEntries div div {
+    width: 410px;
+    height: 180px;
+    margin: 20px;
 }
 
 /* END Blog page */
