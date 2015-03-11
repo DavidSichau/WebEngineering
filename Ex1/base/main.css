@@ -396,41 +396,90 @@ body {
 /* END Blog page */
 
 /* BEGIN portfolio */
+@media screen and (min-width: 768px) and (min-width: 1024px) {
+    #portfolio {
+        padding-left: 1.25em;
+        padding-top: 1.25em;
+    }
 
-#portfolio {
-    padding-left: 20px;
-    padding-top: 20px;
+    #portfolio img {
+        float: left;
+        width: 100%;
+        max-height: 9.3em;
+        margin-right:  1em;
+        margin-bottom: 1em;
+    }
+
+    #portfolio li {
+        display: inline-block;
+        vertical-align: top;
+        float: left;
+        background-color: #ffffff;
+        margin-bottom: 1.25em;
+        margin-right: 1.25em;
+    }
+
+    #portfolio li > div {
+        width: 13.4em;
+        height: 13.75em;
+    }
+
+    #portfolio li  div div {
+        padding: 1.25em;
+        line-height: 1.5em;
+    }
 }
 
-#portfolio img {
-    float: left;
-    width: 100%;
-    max-height: 150px;
-    margin-right:  15px;
-    margin-bottom: 15px;
+@media screen and (max-width: 1023px) {
+    .bg3 {
+        overflow: auto;
+    }
+
+    #portfolio {
+        padding-left: 1.25em;
+        padding-top: 1.25em;
+    }
+
+    #portfolio img {
+        float: left;
+        width: 100%;
+        max-height: 9.3em;
+        margin-right:  1em;
+        margin-bottom: 1em;
+    }
+
+    #portfolio {
+        display: -webkit-box;
+        display: -moz-box;
+        display: -ms-flexbox;
+        display: -webkit-flex;
+        display: flex;
+      
+        -webkit-flex-flow: row wrap;
+        justify-content: space-around;
+        /* justify-content: center; */
+    }
+
+    #portfolio li {
+        display: inline-block;
+        vertical-align: top;
+        float: left;
+        background-color: #ffffff;
+        margin-bottom: 1.25em;
+        margin-right: 1.25em;
+    }
+
+    #portfolio li > div {
+        width: 15em;
+        height: 15em;
+    }
+
+    #portfolio li  div div {
+        padding: 1.25em;
+        line-height: 1.5em;
+        font-size: 1.2em;
+    }
 }
-
-#portfolio li {
-    display: inline-block;
-    vertical-align: top;
-    float: left;
-    background-color: #ffffff;
-    margin-bottom: 20px;
-    margin-right: 20px;
-}
-
-#portfolio li > div {
-    width: 215px;
-    height: 220px;
-}
-
-#portfolio li  div div {
-    padding: 20px;
-    line-height: 1.5em;
-}
-
-
-
 /* END Portfolio */
 
 .floatRight {
