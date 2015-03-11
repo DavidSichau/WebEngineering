@@ -198,7 +198,7 @@ body {
         z-index: -1;
         top: 0;
         background-color: black;
-        margin-left: 60px;
+        margin-left: 3.75em;
     }
 
      .nav img {
@@ -206,6 +206,41 @@ body {
     }
 }
 
+@media screen and (max-width: 767px) {
+    .header {
+        position: relative;
+        min-height: 5.5em;
+    }
+    .header h1 {
+        display: inline-block;
+        background-color: gray;
+        padding-left: 1.5em;
+        font-size: 1.5em;
+        margin:auto;
+        line-height: 2em;
+        vertical-align:middle;
+    }
+    .header .title {
+        position: relative;
+        display: block;
+        background-color: gray;
+        height: 100%;
+    }
+    .header div {
+        display: block;
+    }
+
+    .nav {
+        width: 90%;
+        margin-left: auto;
+        background-color: black;
+        /* margin-left: 60px; */
+    }
+
+     .nav img {
+        width: 22%;
+    }
+}
 
 /* END header */
 
