@@ -73,22 +73,26 @@ body {
     /* backgrounds depending on page*/
     .bg1 { 
         max-width: 960px;
+        background-image: url("images/bg1.png");
     }
 
     .bg2 {
         max-width: 960px;
+        background-image: url("images/bg2.png");
     }
 
     .bg3 {
         max-width: 960px;
+        background-image: url("images/bg3.png");
     }
 
     .bg4 {
         max-width: 960px;
+        background-image: url("images/bg4.png");
     }
 
     .bg4>div {
-        padding-left: 5px; 
+        padding-left: 0.8em; 
     }
 }
 
@@ -111,6 +115,7 @@ body {
     /* backgrounds depending on page*/
     .bg1 { 
         max-width: 1023px;
+        background-image: url("images/bg1.png");
     }
 
     .bg2 {
@@ -122,34 +127,13 @@ body {
     }
 
     .bg4 {
+        background-image: url("images/bg4.png");
         max-width: 1023px;
     }
 
     .bg4>div {
-        padding-left: 5px; 
+        padding-left: 0.8em; 
     }
-}
-
-
-/* backgrounds depending on page*/
-.bg1 { 
-    background-image: url("images/bg1.png");
-}
-
-.bg2 {
-    background-image: url("images/bg2.png");
-}
-
-.bg3 {
-    background-image: url("images/bg3.png");
-}
-
-.bg4 {
-    background-image: url("images/bg4.png");
-}
-
-.bg4>div {
-    padding-left: 5px; 
 }
 
 /* BEGIN header */
@@ -257,12 +241,10 @@ body {
 /* END Index page */
 
 /* BEGIN Contact Us page */
-
 #welcomeMsg {
-    margin-top: 15px;
+    margin-top: 1em;
     color: #fff;
-    font-size: 45px;
-    margin-bottom: 190px;
+    font-size: 2.5em;
 }
 
 #contactForm {
@@ -274,23 +256,23 @@ body {
 #contactForm p {
     float: left;
     clear: both;
-    margin-top: 10px;
+    margin-top: 0.6em;
 }
 
 #contactForm input {
     float: right;
-    margin-top: 10px;
+    margin-top: 0.6em;
 }
 
 #contactForm textarea {
-    margin-top: 5px;
+    margin-top: 0.4em;
     width: 98%;
 }
 
 #contactDetails {
-    padding: 15px;
-    padding-bottom: 40px; 
-    margin-right: 20px;
+    padding: 1em;
+    padding-bottom: 2.5em; 
+    margin-right: 1.2em;
     float: right;
     width: 45%;
     background-color: white;
@@ -300,10 +282,28 @@ body {
 
 #contactDetails strong {
     display: inline-block;
-    margin-top: 15px;
+    margin-top: 1em;
     
 }
+@media screen and (min-width: 1024px) {
+    #welcomeMsg {
+        margin-bottom: 4.5em;
+    }
+}
 
+@media screen and (min-width: 768px) and (max-width: 1023px) {
+    #welcomeMsg {
+        margin-bottom: 2em;
+    }
+
+    #contactForm {
+        width: 45%;
+    }
+
+    #contactDetails {
+        padding-bottom: 0.5em; 
+    }
+}
 /* END Contact Us page */
 
 /* Blog page */
