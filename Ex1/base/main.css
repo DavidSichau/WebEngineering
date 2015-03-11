@@ -49,7 +49,7 @@ body {
 
 .main {
     position: relative;
-    background-size: 95% auto;
+    background-size: 95% 95%;
     background-position: center;
     background-repeat: no-repeat;
 }
@@ -105,6 +105,7 @@ body {
         width: 100%;
         min-height: 400px;
         background-color: gray;
+        padding: 1em;
     }
 
     /* backgrounds depending on page*/
@@ -192,17 +193,16 @@ body {
     .header h1 {
         display: inline-block;
         background-color: gray;
-        width: 300px;
-        padding-left: 25px;
-        font-size: 24px;
+        width: 100%;
+        padding-left: 1.5em;
+        font-size: 1.5em;
         margin:auto;
-        line-height:51px;
+        line-height: 2em;
         vertical-align:middle;
     }
     .header .title {
         position: relative;
         background-color: gray;
-        min-height: 62px;
         height: 100%;
     }
     .header div {
@@ -215,6 +215,10 @@ body {
         top: 0;
         background-color: black;
         margin-left: 60px;
+    }
+
+     .nav img {
+        width: 22%;
     }
 }
 
@@ -420,8 +424,9 @@ body {
         display: flex;
         background-color: gray;
         color: white;
-        padding: 25px;
+        padding: 1em;
         padding-top: 0;
+        width: 100%;
     }
 
     .footer .content {
@@ -433,7 +438,7 @@ body {
     }
 
     .footer .content:nth-child(2) img {
-        width: 15%;
+        width: 17%;
     }
 
     .qr-code {
