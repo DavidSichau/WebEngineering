@@ -163,8 +163,8 @@ body {
 
     .nav {
         position: absolute;
-        z-index: -1;
         top: 0;
+        right: 60px;
         background-color: black;
         margin-left: 60px;
     }
@@ -306,7 +306,7 @@ body {
 
 #contactDetails {
     padding: 1em;
-    padding-bottom: 2.5em; 
+    padding-bottom: 2.5em;
     margin-right: 1.2em;
     float: right;
     width: 45%;
@@ -349,8 +349,8 @@ body {
         position: initial;
         width: initial;
         margin: auto;
-        top: 0px;
-        left: 0px;
+        top: 0;
+        left: 0;
         padding: 0.6em;
         background-color: transparent;
     }
@@ -392,8 +392,8 @@ body {
         position: initial;
         width: initial;
         margin: auto;
-        top: 0px;
-        left: 0px;
+        top: 0;
+        left: 0;
         padding: 0.6em;
         background-color: transparent;
     }
