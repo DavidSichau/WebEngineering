@@ -167,11 +167,11 @@ body {
     }
 
     .header header {
-        display: block;
+        display: inline-block;
     }
 
     .header nav {
-        display: block;
+        display: inline-block;
     }
 
     .nav {
@@ -204,11 +204,11 @@ body {
     }
 
     .header header {
-        display: block;
+        display: inline-block;
     }
 
     .header nav {
-        display: block;
+        display: inline-block;
     }
 
     .nav {
@@ -394,11 +394,11 @@ body {
         background-color: #ffffff;
     }
 
-    .blogEntries > div {
+    .blogEntries > section {
         margin: 1.25em;
     }
 
-    .blogEntries div div {
+    .blogEntries section article {
         width: 25.6em;
         height: 11.25em;
         margin: 1.25em;
@@ -437,11 +437,11 @@ body {
         background-color: #ffffff;
     }
 
-    .blogEntries > div {
+    .blogEntries > section {
         margin: 1.25em;
     }
 
-    .blogEntries div div {
+    .blogEntries section article {
         width: auto;
         min-height: 9em;
         margin: 1.25em;
