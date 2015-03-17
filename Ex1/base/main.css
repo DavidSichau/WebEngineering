@@ -97,7 +97,7 @@ body {
 }
 
 @media screen and (min-width: 768px) and (max-width: 1023px) {
-    body>div {
+    body>section {
         margin: auto;
         padding: 2%;
         max-width: 1023px;
@@ -157,8 +157,13 @@ body {
         min-height: 62px;
         height: 100%;
     }
-    .header div {
-        display: inline-block;
+
+    .header header {
+        display: block;
+    }
+
+    .header nav {
+        display: block;
     }
 
     .nav {
@@ -189,8 +194,13 @@ body {
         background-color: gray;
         height: 100%;
     }
-    .header div {
-        display: inline-block;
+
+    .header header {
+        display: block;
+    }
+
+    .header nav {
+        display: block;
     }
 
     .nav {
@@ -225,7 +235,12 @@ body {
         background-color: gray;
         height: 100%;
     }
-    .header div {
+
+    .header header {
+        display: block;
+    }
+
+    .header nav {
         display: block;
     }
 
