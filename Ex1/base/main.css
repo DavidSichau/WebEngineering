@@ -476,12 +476,12 @@ body {
         margin-right: 1.25em;
     }
 
-    #portfolio li > div {
+    #portfolio li > article {
         width: 13.4em;
         height: 13.75em;
     }
 
-    #portfolio li  div div {
+    #portfolio li  article footer{
         padding: 1.25em;
         line-height: 1.5em;
     }
@@ -526,12 +526,12 @@ body {
         margin-right: 1.25em;
     }
 
-    #portfolio li > div {
+    #portfolio li > article {
         width: 15em;
         height: 15em;
     }
 
-    #portfolio li  div div {
+    #portfolio li  article footer {
         padding: 1.25em;
         line-height: 1.5em;
         font-size: 1.2em;
