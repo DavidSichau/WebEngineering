@@ -91,7 +91,11 @@ body {
         background-image: url("images/bg4.png");
     }
 
-    .bg4>div {
+    .bg4>section {
+        padding-left: 0.8em; 
+    }
+
+    .bg4>header {
         padding-left: 0.8em; 
     }
 }
@@ -131,7 +135,11 @@ body {
         max-width: 1023px;
     }
 
-    .bg4>div {
+    .bg4>section {
+        padding-left: 0.8em; 
+    }
+
+    .bg4>header {
         padding-left: 0.8em; 
     }
 }
@@ -210,7 +218,7 @@ body {
         margin-left: 3.75em;
     }
 
-     .nav img {
+    .nav img {
         width: 22%;
     }
 }
@@ -251,7 +259,7 @@ body {
         /* margin-left: 60px; */
     }
 
-     .nav img {
+    .nav img {
         width: 22%;
     }
 }
