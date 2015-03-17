@@ -55,7 +55,7 @@ body {
 }
 
 @media screen and (min-width: 1024px) {
-    body>div {
+    body>section {
         margin: auto;
         padding: 25px;
         max-width: 1010px;
