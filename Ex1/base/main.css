@@ -151,131 +151,32 @@ body {
     }
 }
 
+
 /* BEGIN header */
-@media screen and (min-width: 1024px) {
-    .header {
-        position: relative;
-    }
+.header {
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-end;
+    flex-wrap: wrap;
 
-    .header h1 {
-        display: inline-block;
-        background-color: gray;
-        width: 300px;
-        padding-left: 25px;
-        font-size: 24px;
-        margin: auto;
-        line-height: 51px;
-        vertical-align: middle;
-    }
-
-    .header .title {
-        position: relative;
-        background-color: gray;
-        min-height: 62px;
-        height: 100%;
-    }
-
-    .header header {
-        display: inline-block;
-    }
-
-    .header nav {
-        display: inline-block;
-    }
-
-    .nav {
-        position: absolute;
-        top: 0;
-        right: 60px;
-        background-color: black;
-        margin-left: 60px;
-    }
 }
 
-@media screen and (min-width: 768px) and (max-width: 1023px) {
-    .header {
-        position: relative;
-    }
+.header header {
+    background-color: gray;
+    min-height: 62px;
+    margin-right: 5em;
+    height: 100%;
+    width: 300px;
+    padding-left: 25px;
+    font-size: 24px;
+    line-height: 51px;
+    vertical-align: middle;
+}
+.header nav img{
+    margin-bottom: -5px;
 
-    .header h1 {
-        display: inline-block;
-        background-color: gray;
-        width: 100%;
-        padding-left: 1.5em;
-        font-size: 1.5em;
-        margin: auto;
-        line-height: 2em;
-        vertical-align: middle;
-    }
-
-    .header .title {
-        position: relative;
-        background-color: gray;
-        height: 100%;
-    }
-
-    .header header {
-        display: inline-block;
-    }
-
-    .header nav {
-        display: inline-block;
-    }
-
-    .nav {
-        position: absolute;
-        top: 0;
-        background-color: black;
-        margin-left: 3.75em;
-    }
-
-    .nav img {
-        width: 22%;
-    }
 }
 
-@media screen and (max-width: 767px) {
-    .header {
-        position: relative;
-        min-height: 5.5em;
-    }
-
-    .header h1 {
-        display: inline-block;
-        background-color: gray;
-        padding-left: 1.5em;
-        font-size: 1.5em;
-        margin: auto;
-        line-height: 2em;
-        vertical-align: middle;
-    }
-
-    .header .title {
-        position: relative;
-        display: block;
-        background-color: gray;
-        height: 100%;
-    }
-
-    .header header {
-        display: block;
-    }
-
-    .header nav {
-        display: block;
-    }
-
-    .nav {
-        width: 90%;
-        margin-left: auto;
-        background-color: black;
-        /* margin-left: 60px; */
-    }
-
-    .nav img {
-        width: 22%;
-    }
-}
 
 /* END header */
 
