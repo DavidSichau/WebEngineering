@@ -380,89 +380,47 @@ body {
 /* END Contact Us page */
 
 /* Blog page */
-@media screen and (min-width: 1024px) {
 
-    #blogContainer {
-        position: initial;
-        width: initial;
-        margin: auto;
-        top: 0;
-        left: 0;
-        padding: 0.6em;
-        background-color: transparent;
-    }
-
-    .blogEntries img {
-        float: left;
-        width: 30%;
-        margin-right: 1em;
-        margin-bottom: 1em;
-    }
-
-    .blogEntries li {
-        display: inline-block;
-        vertical-align: top;
-        float: left;
-        margin: 0.6em;
-        color: black;
-        opacity: 0.95;
-        background-color: #ffffff;
-    }
-
-    .blogEntries > section {
-        margin: 1.25em;
-    }
-
-    .blogEntries section article {
-        width: 25.6em;
-        height: 11.25em;
-        margin: 1.25em;
-    }
+#blogContainer {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    position: initial;
+    width: initial;
+    margin: auto;
+    top: 0;
+    left: 0;
+    padding: 0.6em;
+    background-color: transparent;
 }
 
-@media screen and (min-width: 768px) and (max-width: 1023px) {
-    .bg2 {
-        overflow: auto;
-    }
+.blogEntries img {
+    float: left;
+    width: 30%;
+    margin-right: 1em;
+    margin-bottom: 1em;
+}
 
-    #blogContainer {
-        position: initial;
-        width: initial;
-        margin: auto;
-        top: 0;
-        left: 0;
-        padding: 0.6em;
-        background-color: transparent;
-    }
+.blogEntries li {
+    flex-grow: 1;
 
-    .blogEntries img {
-        float: left;
-        width: 40%;
-        margin-right: 1em;
-        margin-bottom: 1em;
-    }
+    display: inline-block;
+    vertical-align: top;
+    float: left;
+    margin: 0.6em;
+    color: black;
+    opacity: 0.95;
+    background-color: #ffffff;
+}
 
-    .blogEntries li {
-        display: inline-block;
-        vertical-align: top;
-        float: left;
-        margin: 0.6em;
-        color: black;
-        opacity: 0.95;
-        background-color: #ffffff;
-    }
+.blogEntries > section {
+    margin: 1.25em;
+}
 
-    .blogEntries > section {
-        margin: 1.25em;
-    }
-
-    .blogEntries section article {
-        width: auto;
-        min-height: 9em;
-        margin: 1.25em;
-        resize: vertical;
-        font-size: 1.1em;
-    }
+.blogEntries section article {
+    max-width: 25.6em;
+    height: 11.25em;
+    margin: 1.25em;
 }
 
 /* END Blog page */
@@ -566,16 +524,13 @@ body {
     justify-content: space-around;
     background-color: gray;
     color: white;
-    padding: 25px;
-    padding-top: 0;
-    padding-bottom: 0;
+    padding: 0 25px;
 }
 
 .footer article {
     background-color: darkslategrey;
     padding: 15px;
     margin-bottom: 15px;
-    /*display: inline-block;*/
     float: left;
     min-width: 210px;
     width: 210px;
