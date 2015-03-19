@@ -2,6 +2,7 @@
 
 
 nav#animated {
+    z-index: 1000;
     width: 200px;
     height: 200px;
     position: fixed;
@@ -14,9 +15,11 @@ nav#animated {
     -moz-transition: opacity .25s ease-in-out;
     -webkit-transition: opacity .25s ease-in-out;
 }
-nav#animated:hover {
-    opacity: 1;
+
+nav#animated.hide {
+    visibility: hidden;
 }
+
 
 #animated .no-space {
     font-size: 0;
@@ -33,6 +36,7 @@ nav#animated  .no-space img {
 
 
 #animated .nav-menu {
+    visibility: visible;
     position: absolute;
     left: 2px;
     top: 2px;
