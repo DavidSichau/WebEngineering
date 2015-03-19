@@ -15,6 +15,28 @@
 
         var makeAnimation = function () {
             if(!isSticky) {
+
+                var height = $(window).height();
+                var widht = $(window).width();
+                var posTop = nav.position().top;
+                var posLeft = nav.position().left;
+
+
+                if(height/2 < posTop) {
+                    //move up
+                } else {
+                    //move down
+                }
+
+                if(widht/2 < posLeft) {
+                    //move left
+                } else {
+                    //move right
+                }
+
+                console.log(posLeft);
+                console.log(posTop);
+
                 //make nice animation to neares border
                 nav.animate({
                     top: 10
@@ -42,20 +64,20 @@
         nav.on('click', '.nav-sticky' , function () {
             isSticky = !isSticky;
             if(isSticky) {
-                nav.stop(true);
+                nav.stop(true);//stop animation
                 $(this).attr("src", "images/Navigation/sticky_icon_off.png");
             } else {
-                makeAnimation();
+                makeAnimation();//start animation
                 $(this).attr("src", "images/Navigation/sticky_icon_on.png");
             }
         });
 
         nav.hover(function () {
             nav.css({ opacity: 1 });
-            nav.stop(true);
+            nav.stop(true);//stop the animation on hover
         }, function(){
             nav.css({ opacity: 0.25 });
-            makeAnimation();
+            makeAnimation();//restart the animation
         });
 
 
