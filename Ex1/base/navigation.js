@@ -21,26 +21,25 @@
                 var posTop = nav.position().top;
                 var posLeft = nav.position().left;
 
+                var animationObj = {
 
+                };
                 if(height/2 < posTop) {
-                    //move up
+                    animationObj.top = 0;
                 } else {
-                    //move down
+                    animationObj.bottom = 0;
                 }
 
                 if(widht/2 < posLeft) {
-                    //move left
+                    animationObj.left = 0;
                 } else {
-                    //move right
+                    animationObj.right = 0;
                 }
 
-                console.log(posLeft);
-                console.log(posTop);
+
 
                 //make nice animation to neares border
-                nav.animate({
-                    top: 10
-                }, 5000)
+                nav.animate(animationObj, 5000)
             }
         };
 
