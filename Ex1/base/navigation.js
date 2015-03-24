@@ -163,6 +163,22 @@
             dragging = nav;
         });
 
+        $('.nav-menu').mousedown(function (e) {
+            dragging = $('.nav-menu');
+        });
+
+        /*
+        if !nav.hasClass('hide') {
+            nav.mousedown(function (e) {
+                dragging = nav;
+            });
+        } else {
+            $('.nav-menu').mousedown(function (e) {
+                dragging = nav;
+            });
+        }
+        */
+
         nav.mouseup(function () {
             dragging = null;
             makeAnimation();
