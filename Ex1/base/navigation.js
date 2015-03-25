@@ -12,12 +12,6 @@
         var isSticky = false;
         var dragging = null;
 
-        //listen to window resize
-        $( window ).resize(function() {
-            //does not work good
-            makeAnimation();
-        });
-
         var makeAnimation = function () {
 
             if(!isSticky) {
@@ -25,8 +19,7 @@
                 // window dimensions
                 var height = $(window).height();
                 var width = $(window).width();
-                console.log(width);
-                
+
                 // border positions
                 var posTop = nav.position().top;
                 var posLeft = nav.position().left;
@@ -103,22 +96,35 @@
             }
         };
 
+        var resizeWindow = function () {
+            var width = $(window).width();
+            if(width <  700) {
+                nav.addClass('hide');
+            }
+            makeAnimation();
+        };
+        //listen to window resize
+        $( window ).resize(
+            _.debounce(resizeWindow, 200)
+        );
 
         $('body').on("mousemove", function(e) {
             //we need better snapping at the moment the top corner
             //also some samall ui snitches
             if (dragging) {
+                var relativeXPosition = (e.pageX - draggingOffset.left); //offset -> method allows you to retrieve the current position of an element 'relative' to the document
+                var relativeYPosition = (e.pageY - draggingOffset.top);
                 dragging.offset({
-                    top: e.pageY,
-                    left: e.pageX
+                    //top: e.pageY,
+                    //left: e.pageX
+                    top: relativeYPosition,
+                    left: relativeXPosition
                 });
             }
         });
 
-
         nav.on('click', '.nav-menu', function () {
             nav.toggleClass('hide');
-            console.log(dragging)
             if(!dragging){
                 makeAnimation()
             }
@@ -147,6 +153,10 @@
 
 
         nav.mousedown(function (e) {
+            draggingOffset = {
+                left: e.pageX - nav.offset().left,
+                top: e.pageY - nav.offset().top
+            };
             dragging = nav;
         });
 
