@@ -81,6 +81,10 @@ body {
     .bg1 {
         max-width: 960px;
         background-image: url("images/bg1.png");
+
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-around;
     }
 
     .bg2 {
@@ -107,7 +111,7 @@ body {
     }
 }
 
-@media screen and (min-width: 768px) and (max-width: 1023px) {
+@media screen and (max-width: 1023px) {
     body > section {
         margin: auto;
         padding: 2%;
@@ -117,7 +121,6 @@ body {
 
     .main {
         margin: auto;
-        width: 100%;
         min-height: 400px;
         background-color: gray;
         padding: 1em;
@@ -127,6 +130,9 @@ body {
     .bg1 {
         max-width: 1023px;
         background-image: url("images/bg1.png");
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-around;;
     }
 
     .bg2 {
@@ -195,7 +201,7 @@ body {
     }
 }
 
-@media screen and (min-width: 768px) and (max-width: 1023px) {
+@media screen and (max-width: 1023px) {
     .description {
         position: absolute;
         top: 2em;
