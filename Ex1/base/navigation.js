@@ -14,6 +14,7 @@
 
         //listen to window resize
         $( window ).resize(function() {
+            //does not work good
             makeAnimation();
         });
 
@@ -47,8 +48,8 @@
                 var bottomBorder = height - nav.height() - 10;
                 //change behaviour when only hamburger is visible
                 if(nav.hasClass('hide')) {
-                    rightBorder = width - $('.nav-menu').width() -10;
-                    bottomBorder = height - $('.nav-menu').height() -10;
+                    rightBorder = width - nav.find('.nav-menu').width() -10;
+                    bottomBorder = height - nav.find('.nav-menu').height() -10;
                 }
 
 
@@ -124,7 +125,6 @@
         });
 
         nav.on('click', '.nav-sticky' , function () {
-            console.log('clicl nav-sticky')
             isSticky = !isSticky;
             if(isSticky) {
                 nav.stop(true);//stop animation
