@@ -187,22 +187,23 @@ body {
 /* END header */
 
 /* BEGIN Index page */
-@media screen and (min-width: 1024px) {
-    .description {
-        position: absolute;
-        top: 40px;
-        left: 40px;
-        width: 30%;
-        background-color: black;
-        color: white;
-        opacity: 0.5;
-        padding: 20px;
-        height: 430px;
-    }
-}
+/*@media screen and (min-width: 1024px) {*/
+    /*.description {*/
+        /*position: absolute;*/
+        /*top: 40px;*/
+        /*left: 40px;*/
+        /*width: 30%;*/
+        /*background-color: black;*/
+        /*color: white;*/
+        /*opacity: 0.5;*/
+        /*padding: 20px;*/
+        /*height: 430px;*/
+    /*}*/
+/*}*/
 
-@media screen and (max-width: 1023px) {
-    .description {
+/*@media screen and (max-width: 1023px) {*/
+    .bg1 .description {
+        /*overflow: scroll;*/
         position: absolute;
         top: 2em;
         left: 2em;
@@ -214,7 +215,7 @@ body {
         resize: vertical;
         font-size: 1.1em;
     }
-}
+/*}*/
 
 /* END Index page */
 
