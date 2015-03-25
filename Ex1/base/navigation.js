@@ -11,6 +11,7 @@
         //variable where isSticky state is stored
         var isSticky = false;
         var dragging = null;
+        var draggingOffset = null;
 
         var makeAnimation = function () {
 
@@ -109,14 +110,10 @@
         );
 
         $('body').on("mousemove", function(e) {
-            //we need better snapping at the moment the top corner
-            //also some samall ui snitches
             if (dragging) {
-                var relativeXPosition = (e.pageX - draggingOffset.left); //offset -> method allows you to retrieve the current position of an element 'relative' to the document
+                var relativeXPosition = (e.pageX - draggingOffset.left);
                 var relativeYPosition = (e.pageY - draggingOffset.top);
                 dragging.offset({
-                    //top: e.pageY,
-                    //left: e.pageX
                     top: relativeYPosition,
                     left: relativeXPosition
                 });
@@ -145,7 +142,7 @@
             nav.css({ opacity: 1 });
             nav.stop(true);//stop the animation on hover
         }, function(){
-            nav.css({ opacity: 0.25 });
+            nav.css({ opacity: 0.33 });
             if(!dragging) {
                 makeAnimation();//restart the animation
             }

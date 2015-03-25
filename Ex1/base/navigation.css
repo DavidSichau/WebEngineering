@@ -6,11 +6,11 @@ nav#animated {
     width: 200px;
     height: 200px;
     position: fixed;
-    background-color: gray;
+    background-color: #ffffff;
     border-radius: 15px;
     top: 10px;
     left: 10px;
-    opacity: 0.25;
+    opacity: 0.33;
     transition: opacity .25s ease-in-out;
     -moz-transition: opacity .25s ease-in-out;
     -webkit-transition: opacity .25s ease-in-out;
