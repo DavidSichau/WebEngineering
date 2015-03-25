@@ -171,6 +171,7 @@
 
         var resizeWindow = function () {
             var width = $(window).width();
+            //$(window).resize(function() {});
             if(width <  700) {
                 nav.addClass('hide');
             }
@@ -234,6 +235,8 @@
                 dragging = null;
                 makeAnimation();
             }
-        })
+        });
+
+        $('img').on('dragstart', function(event) { event.preventDefault(); });
     })
 }());

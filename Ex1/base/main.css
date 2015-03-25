@@ -213,7 +213,7 @@ body {
         opacity: 0.5;
         padding: 1em;
         resize: vertical;
-        font-size: 1.1em;
+        font-size: 1em;
     }
 /*}*/
 
@@ -319,7 +319,7 @@ body {
     float: left;
     margin: 0.6em;
     color: black;
-    opacity: 0.95;
+    opacity: 0.65;
     background-color: #ffffff;
 }
 
