@@ -121,7 +121,7 @@ body {
 
     .main {
         margin: auto;
-        min-height: 400px;
+        min-height: 500px;
         background-color: gray;
         padding: 1em;
     }
