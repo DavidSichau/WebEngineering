@@ -1,6 +1,7 @@
 <?php 
 
-    add_theme_support('post-thumbnails');
+	require_once('theme-options.php');
+    add_theme_support('post-thumbnails');    
 
  $stylesheet_url = get_bloginfo('stylesheet_url');
  $stylesheet_dir = get_bloginfo('stylesheet_directory');

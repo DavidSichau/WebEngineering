@@ -24,7 +24,21 @@
 					<strong>About Me</strong>
 					<br>
 					<br>
-					Lara is a freelance web designer with satisfied clients worldwide. Lara has been designing websites professionally for over eight years, and... <strong>More</strong>
+					<?php 
+						$maxWords = 25;
+						$aboutMe = get_option('aboutMe_text');
+						$textArr = explode(' ', $aboutMe);
+						if (count($textArr) >= $maxWords) {
+							$text = implode(' ', array_slice($textArr, 0, $maxWords));
+							$text = $text.'...';
+						} else {
+							$text = implode(' ', array_slice($textArr, 0, $maxWords));
+						}
+						
+						echo $text;
+						
+					?>
+					<strong><a href="index.php" style="color:#fff;">More</a></strong>
 					<br>
 					<br>
 					<strong>Follow me:</strong>
@@ -40,7 +54,19 @@
 					<strong>My last post</strong>
 					<br>
 					<br>
-					Over the previous year, the Polymer team has spent a lot of time teaching developers how to create their own elements. This has lead to a rapidly growing ecosystem, buoyed in large... <strong>More</strong>
+					<?php
+						$args = array( 
+							'posts_per_page' => 1, 
+							'offset'=> 0,
+							);
+
+						$allPosts = new WP_Query($args);
+						if ( $allPosts->have_posts() ) {
+							$allPosts->the_post();
+							the_excerpt();
+						}
+					?>
+					<a href=<?php the_permalink(); ?> style="color: white;"><strong>More</strong></a>
 				</div>
 				<div class="flex-item">
 					<strong>Last Project</strong>
