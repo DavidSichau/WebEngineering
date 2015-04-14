@@ -61,7 +61,7 @@
 							);
 
 						$allPosts = new WP_Query($args);
-						if ( $allPosts->have_posts() ) {
+						if ($allPosts->have_posts() ) {
 							$allPosts->the_post();
 							the_excerpt();
 						}
@@ -69,13 +69,19 @@
 					<a href=<?php the_permalink(); ?> style="color: white;"><strong>More</strong></a>
 				</div>
 				<div class="flex-item">
+					<?php
+						$latestPortfolio = new WP_Query('post_type=portfolio');
+						if ($latestPortfolio->have_posts() ) {
+							$latestPortfolio->the_post();
+						}
+					?>
 					<strong>Last Project</strong>
 					<br>
 					</br>
-					Freelance WebSite
+					<?php the_title(); ?>
 					<br>
 					<br>
-					<img width="80%" src="<?php echoPicture($stylesheet_dir,'images/portfolio/p1.jpg');?>" >
+					<?php the_post_thumbnail('thumbnail'); ?>
 				</div>
 
 				<!-- </div> -->
