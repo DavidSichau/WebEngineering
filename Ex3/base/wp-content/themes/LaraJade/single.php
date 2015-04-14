@@ -56,6 +56,32 @@
 
 			// End the loop.
 			endwhile;
+
+			echo '<strong>Related:</strong>';
+			$connected = new WP_Query( array(
+			  'connected_type' => 'posts_to_pages',
+			  'connected_items' => get_queried_object(),
+			  'nopaging' => true,
+				) 
+			);
+
+			// Display connected pages
+			if ( $connected->have_posts() ) :
+			?>
+				
+			<ul>
+			<?php while ( $connected->have_posts() ) : $connected->the_post(); ?>
+			    <li><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></li>
+			<?php endwhile; ?>
+			</ul>
+
+			<?php 
+			// Prevent weirdness
+			wp_reset_postdata();
+
+			else:
+				echo " Sorry, no related posts found.";
+			endif;			
 		?>
 
 		</main>
