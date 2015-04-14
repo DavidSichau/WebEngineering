@@ -2,6 +2,22 @@
     global $stylesheet_dir, $stylesheet_url;
 
     get_header();
+
+    $firstname = $lastname = $message = "";
+
+	if ($_SERVER["REQUEST_METHOD"] == "POST") {
+		$firstname = test_input($_POST["firstname"]);
+		$lastname = test_input($_POST["lastname"]);
+		$message = test_input($_POST["message"]);
+		$mailSent = mail(get_option('admin_email'), 'Mail from '.$firstname.' '.$lastname, $message);
+	}
+
+	function test_input($data) {
+	  $data = trim($data);
+	  $data = stripslashes($data);
+	  $data = htmlspecialchars($data);
+	  return $data;
+	}
 ?>
 
 				<div class="container" style="background-image: url('<?php echoPicture($stylesheet_dir,'images/bg4.png');?>');background-size: 100%;background-repeat: no-repeat;background-color: #040205; min-height: 500px;" role="main">
@@ -15,7 +31,7 @@
 					<br><br><br><br><br><br><br><br><br><br><br>
 
 					<div style="float:left;overflow: hidden;vertical-align: bottom;">
-						<form>
+						<form method="POST" action="">
 							<p style="float:left;">
 								First name:
 							</p>
@@ -31,7 +47,7 @@
 							<br>
 							<textarea type="text" name="message" rows="7" cols="65" >	</textarea>
 							<br>
-							<button type="button" style="background-color:#fafafa; color:#000;padding-left:5px;padding-right:5px;">
+							<button type="submit" style="background-color:#fafafa; color:#000;padding-left:5px;padding-right:5px;">
 								Submit
 							</button>
 						</form>
@@ -46,8 +62,17 @@
 							<br>
 							<strong style="float:left;">Address: </strong><strong style="float:right;"> New Chrichton Cottage, Arradoul, Buckie, AB43 AP
 							Scotland UK</strong>
+							<?php
+							/*
+								if ($mailSent) {
+									echo "Mail Sent";
+								} else if (isset($mailSent)) {
+									echo "Mail not sent";
+								}
+							*/
+							?>
 						</div>
 					</div>
-
+					
 				</div>
 <?php get_footer();?>
