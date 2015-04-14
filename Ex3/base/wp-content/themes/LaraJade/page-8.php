@@ -9,7 +9,11 @@
 		$firstname = test_input($_POST["firstname"]);
 		$lastname = test_input($_POST["lastname"]);
 		$message = test_input($_POST["message"]);
-		$mailSent = mail(get_option('admin_email'), 'Mail from '.$firstname.' '.$lastname, $message);
+		$adminMail = get_option('admin_email');
+		$headers = 'From: webmaster@larajade.com' . "\r\n" .
+    	'Reply-To: webmaster@larajade.com' . "\r\n" .
+    	'X-Mailer: PHP/' . phpversion();
+		$mailSent = mail($adminMail, 'Mail from '.$firstname.' '.$lastname, $message, $headers);
 	}
 
 	function test_input($data) {
@@ -66,6 +70,11 @@
 							/*
 								if ($mailSent) {
 									echo "Mail Sent";
+									var_dump($adminMail);
+									var_dump($message);
+									var_dump($firstname);
+									var_dump($lastname);
+									var_dump($headers);
 								} else if (isset($mailSent)) {
 									echo "Mail not sent";
 								}
