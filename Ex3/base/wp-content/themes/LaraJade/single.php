@@ -1,6 +1,6 @@
 <?php 
 	global $stylesheet_dir, $stylesheet_url;
-	get_header(); 
+	get_header();
 ?>
 
 	<div id="main" class="group">
@@ -10,11 +10,12 @@
 			while ( have_posts() ) : the_post();
 
 			if (get_post_type() == 'post') {
-				the_title('<h1 style="color:blue;size=5em"><strong>','</strong></h1>');
+				//style="color:blue;font-size=5em;"
+				the_title('<h2 class="headline"><strong>','</strong></h2>');
 				the_post_thumbnail( 'large', array( 'float' => 'left' ) );
 				the_content();	
 			} else if (get_post_type() == 'portfolio') {
-				the_title('<h1 style="color:blue;size=5em"><strong>','</strong></h1>');
+				the_title('<h2 class="headline"><strong>','</strong></h2>');
 				the_post_thumbnail( 'large', array( 'float' => 'left' ) );
 				echo '</br>';
 				//the_content();

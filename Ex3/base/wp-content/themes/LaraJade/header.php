@@ -10,8 +10,8 @@
 		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
 		<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
 		<script src="http://code.jquery.com/ui/1.11.3/jquery-ui.js"></script>
+        <link rel="stylesheet" href="<?php echo $stylesheet_url; ?>">
         <?php wp_head();?>
-		<link rel="stylesheet" href="<?php echo $stylesheet_url; ?>">
 	</head>
 	<script>
 		$(document).ready(function() {

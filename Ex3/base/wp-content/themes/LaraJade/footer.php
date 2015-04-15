@@ -5,17 +5,23 @@
 				<div class="flex-item" style="margin-right: 1.25rem;">
 					<strong>ADDRESS</strong>
 					<br>
+					<?php
+						$default = '
+						<br>
+						<br>
+						New Chrichton Cottage
+						<br>
+						Arradoul, Buckie
+						<br>
+						AB43 5AP
+						<br>
+						Scotland UK
+						';
+						echo nl2br(get_theme_mod('address_textbox', $default)); 
+					?>				
 					<br>
-					New Chrichton Cottage
 					<br>
-					Arradoul, Buckie
-					<br>
-					AB43 5AP
-					<br>
-					Scotland UK
-					<br>
-					<br>
-					+44 (0) 1234 567891
+					+44 (0) 1234 567891	
 					<br>
 					<br>
 					<img width="35%" src="<?php echoPicture($stylesheet_dir,'images/qcode.png');?> " align="left">

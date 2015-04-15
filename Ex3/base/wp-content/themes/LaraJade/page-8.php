@@ -10,7 +10,7 @@
 		$lastname = test_input($_POST["lastname"]);
 		$message = test_input($_POST["message"]);
 		$adminMail = get_option('admin_email');
-		$headers = 'From: webmaster@larajade.com' . "\r\n" .
+		$headers = 'From: someone@larajade.com' . "\r\n" .
     	'Reply-To: webmaster@larajade.com' . "\r\n" .
     	'X-Mailer: PHP/' . phpversion();
 		$mailSent = mail($adminMail, 'Mail from '.$firstname.' '.$lastname, $message, $headers);
@@ -64,8 +64,13 @@
 							<br>
 							<strong style="float:left;">Fax</strong><strong style="float:right;"> +44 (0) 1234 567891</strong>
 							<br>
-							<strong style="float:left;">Address: </strong><strong style="float:right;"> New Chrichton Cottage, Arradoul, Buckie, AB43 AP
-							Scotland UK</strong>
+							<strong style="float:left;">Address: </strong><strong style="float:right;"> 
+							<?php
+								$default = 'New Chrichton Cottage, Arradoul, Buckie, AB43 AP, Scotland UK';
+								$text = str_replace("\n", ', ', get_theme_mod('address_textbox', $default));
+								echo $text;
+							?>
+							</strong>
 							<?php
 							/*
 								if ($mailSent) {
