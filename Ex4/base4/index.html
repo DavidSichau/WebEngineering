@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=0.4, maximum-scale=0.4, user-scalable=no" />
+    <title>Continuous Tilting Example</title>
+
+    <style>
+	
+/* OK STUDENT */
+			body {
+			background: white;
+			}
+             .gallery_class {
+			 
+			-webkit-box-shadow: 0px 0px 0px 2px rgba(0,0,0,0.75);
+			-moz-box-shadow: 0px 0px 0px 2px rgba(0,0,0,0.75);
+			box-shadow: 0px 0px 0px 2px rgba(0,0,0,0.75);
+
+			 margin-top:10px; margin-left:10px;max-width:200px; height:200px;}
+			 .wrp {height:auto; display:inline;
+
+			 }
+			 
+			 .notselected {
+			 -webkit-box-shadow: 0px 0px 0px 3px rgba(0,0,0,0.75);
+			-moz-box-shadow: 0px 0px 0px 3px rgba(0,0,0,0.75);
+			box-shadow: 0px 0px 0px 3px rgba(0,0,0,0.75);
+			 }
+			 .selected {
+			 -webkit-box-shadow: 0px 0px 0px 3px red;
+			-moz-box-shadow: 0px 0px 0px 3px red;
+			box-shadow: 0px 0px 0px 3px red;
+			 }
+        
+		
+		#touch { position: absolute;width: 100%; height:80%;}
+ /* OK STUDENT */
+    .centerimg {
+	  
+	  top: 10px;
+	  position: relative;
+	  left: 10%;
+	  width: 80%;
+	}
+	
+	#info {
+	position:absolute;
+	bottom:0%;
+	right: 10%;
+	}
+    </style>
+
+    <script type="text/javascript" src="js/jquery-2.1.1.min.js"></script>
+  	<script type="text/javascript" src="js/jquery_tiltandtap.js"></script>
+	
+</head>
+<body>
+
+
+<div class="thumbs-block" id="thumbs-block">
+   
+        <div class="wrp"><img id="img1" class="gallery_class selected" src="img/img1.jpg" /></div>
+        <div class="wrp"><img id="img2" class="gallery_class notselected" src="img/img2.jpg" /></div>
+        <div class="wrp"><img id="img3" class="gallery_class notselected" src="img/img3.jpg" /></div>
+        <div class="wrp"><img id="img4" class="gallery_class notselected" src="img/img4.jpg"  /></div>
+</div>
+<div id= "touch" >
+
+<div>
+<!--   USE THIS DIV AS THE TARGET FOR THE TAP HOLD INTERACTION  -->
+<p id="info"></p>
+</div>
+</div>
+
+<script>
+var map = { "img1" : 1, "img2" : 2, "img3" : 3 , "img4" : 4}
+var map_info = { "img1" : "ETH Terrasse", "img2" : "ETH Main Building, interior", "img3" : "ETH Main Building", "img4" : "ETH Main Building 2"}
+
+var curImg = 1;
+var galleryOpen = false;
+var displayInfo = false;
+var tiltUpTime;
+
+$('body').tiltandtap({
+	tiltLeft: 
+		{
+			onTiltLeft: moveBorderLeft
+		},
+	tiltRight:
+		{
+			onTiltRight: moveBorderRight		
+		},
+	tiltUp:
+		{
+			onTiltUp: openLargeImg,
+			interaction:
+				{
+					type: "press",
+					element: "touch"
+				}
+		},
+	tiltDown:
+		{
+			onTiltDown: closeLargeImg,
+			interaction:
+				{
+					type: "press",
+					element: "touch"
+				}
+		},
+	onTiltUp: setTime,
+	onTiltDown: addText
+});
+
+function moveBorderRight() {
+	if (curImg != 4) {
+		$('#img'.concat(curImg)).removeClass('selected');
+		curImg = curImg+1;
+		$('#img'.concat(curImg)).addClass('selected');
+		adaptContent();
+	}
+}
+
+function moveBorderLeft() {
+	if (curImg != 1) {
+		$('#img'.concat(curImg)).removeClass('selected');
+		curImg = curImg-1;
+		$('#img'.concat(curImg)).addClass('selected');
+		adaptContent();
+	}
+}
+
+function adaptContent() {
+	if (galleryOpen) {
+		$("#touch > img").remove();
+		$("#touch").html('<img src=\"img/img' + curImg + '.jpg\" class="centerimg" //>');
+	}
+	if (displayInfo) {
+		$("#touch > p").remove();
+		$("#touch").append('<p id="info">'+map_info["img".concat(curImg)]+'</p>');
+	}
+}
+
+function openLargeImg() {
+	galleryOpen = !galleryOpen;
+	$("#touch").append('<img src=\"img/img' + curImg + '.jpg\" class="centerimg" />');
+}
+
+function closeLargeImg() {
+	galleryOpen = !galleryOpen;
+	$("#touch > img").remove();
+}
+
+function setTime() {
+	tiltUpTime = event.timeStamp;
+	console.log("tilt Up: "+event.timeStamp);
+}
+
+function addText() {
+	console.log("tilt Down:"+event.timeStamp);
+	var timeDiff = event.timeStamp - tiltUpTime;
+	console.log(timeDiff);
+	if (timeDiff < 400) {
+		displayInfo = !displayInfo;
+		if (displayInfo) {
+			$("#touch > p").remove();
+			$("#touch").append('<p id="info">'+map_info["img".concat(curImg)]+'</p>');
+		} else {
+			$("#touch > p").remove();
+		}
+	}
+}
+
+</script>
+
+
+
+
+
+</body>
+</html>
