@@ -144,7 +144,8 @@ function adaptContent() {
 
 function openLargeImg() {
 	galleryOpen = !galleryOpen;
-	$("#touch").append('<img src=\"img/img' + curImg + '.jpg\" class="centerimg" />');
+	//$("#touch").html('<img src=\"img/img' + curImg + '.jpg\" class="centerimg" />');
+	adaptContent();
 }
 
 function closeLargeImg() {
