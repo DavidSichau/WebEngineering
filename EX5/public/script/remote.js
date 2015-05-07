@@ -1,5 +1,48 @@
 var currentImage = 0; // the currently selected image
 var imageCount = 7; // the maximum number of images available
+var socket = null;
+
+
+
+
+var Screen = function(name, connected, socketid) {
+    var self = this;
+    self.name = ko.observable(name);
+    self.connected = ko.observable(!!connected);
+    self.id = socketid;
+    self.connect =  function() {
+        self.connected(true);
+        sendImages();
+    };
+    self.disconnect =  function() {
+        self.connected(false);
+        sendImages();
+    };
+};
+
+var viewModel = {
+    Screens: ko.observableArray( [
+    ] )
+};
+
+var sendImages = function() {
+    // Send the command to the screen
+    if(socket) {
+        var screens  = [];
+        viewModel.Screens().forEach(function (el) {
+            if(el.connected()) {
+                screens.push(el.name());
+            }
+        });
+        socket.emit('show_image', {
+            img: currentImage,
+            screens: screens
+        });
+    }
+};
+
+
+ko.applyBindings(viewModel);
 
 function showImage (index){
     // Update selection on remote
@@ -8,9 +51,7 @@ function showImage (index){
     document.querySelector("img.selected").classList.toggle("selected");
     images[index].classList.toggle("selected");
 
-    // Send the command to the screen
-    // TODO
-    alert("TODO send the index to the screen")
+    sendImages();
 }
 
 function initialiseGallery(){
@@ -42,5 +83,36 @@ document.addEventListener("DOMContentLoaded", function(event) {
 });
 
 function connectToServer(){
-    // TODO connect to the socket.io server
+    var con = io.connect('http://localhost:8080');
+    con.on('connect', function () {
+        socket = con;
+        socket.emit('registerRemote');
+
+        socket.on('register', function(obj) {
+            var element = null;
+            viewModel.Screens().forEach(function (el) {
+                if(el.name() === obj.name) {
+                    element = el;
+                }
+            });
+            //only insert if not exists
+            if(!element) {
+                viewModel.Screens.push(
+                    new Screen(obj.name, false, obj.id)
+                )
+            }
+        });
+
+        socket.on('discon', function (data) {
+            var element = null;
+            viewModel.Screens().forEach(function (el) {
+                if(el.id === data.id) {
+                    element = el;
+                }
+            });
+            if(element) {
+                viewModel.Screens.remove(element);
+            }
+        })
+    });
 }
