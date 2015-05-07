@@ -5,79 +5,33 @@
 				<div class="container" style="background-image: url('./images/bg3.png');background-size: 100%;background-repeat: no-repeat;background-color: #040205; " role="main">
 
 					<ul class="list">
-												<li class="list__item">
-							<figure class="list__item__inner"><img src="<?php echoPicture($stylesheet_dir,'images/portfolio/p1.jpg');?>" alt="">
-								<figcaption>
-									<strong>Freelance WebSite</strong>
-									<br>
-									 2015
-								</figcaption>
-							</figure>
-						</li>
+						<?php
+							$portfolioQuery = new WP_Query('post_type=portfolio');
+							if ($portfolioQuery->have_posts()):
+								while($portfolioQuery->have_posts()):
+									$portfolioQuery->the_post();
+						?>
+
 						<li class="list__item">
-							<figure class="list__item__inner"><img src="<?php echoPicture($stylesheet_dir,'images/portfolio/p2.jpg');?> " alt="">
+							<figure class="list__item__inner">
+								<a href="<?php the_permalink(); ?>">
+								<?php the_post_thumbnail('thumbnail'); ?>
+								</a>
 								<figcaption>
-									<strong>MyHotel WebSite</strong>
+									<strong><?php the_title(); ?></strong>
 									<br>
-									2014
-								</figcaption>
-							</figure>
-						</li>
-						<li class="list__item">
-							<figure class="list__item__inner"><img src="<?php echoPicture($stylesheet_dir,'images/portfolio/p3.jpg');?> " alt="">
-								<figcaption>
-									<strong>Intersac</strong>
-									<br>
-									 2013
-								</figcaption>
-							</figure>
-						</li>
-						<li class="list__item">
-							<figure class="list__item__inner"><img src="<?php echoPicture($stylesheet_dir,'images/portfolio/p4.jpg');?> " alt="">
-								<figcaption>
-									<strong>Voll</strong>
-									<br>
-									 2015
-								</figcaption>
-							</figure>
-						</li>
-						<li class="list__item">
-							<figure class="list__item__inner"><img src="<?php echoPicture($stylesheet_dir,'images/portfolio/p5.png');?> " alt="">
-								<figcaption>
-									<strong>Acrostia</strong>
-									<br>
-								   2011
-								</figcaption>
-							</figure>
-						</li>
-						<li class="list__item">
-							<figure class="list__item__inner"><img src="<?php echoPicture($stylesheet_dir,'images/portfolio/p6.jpg');?> " alt="">
-								<figcaption>
-									<strong>Freesbie</strong>
-									<br>
-									 2010
+									<?php
+										$year = get_post_meta(get_the_ID(),'portfolio_year',true);
+										if ($year != '') {echo $year;}
+									?>
 								</figcaption>
 							</figure>
 						</li>
 
-						<li class="list__item">
-							<figure class="list__item__inner"><img src="<?php echoPicture($stylesheet_dir,'images/portfolio/p7.jpg');?> " alt="">
-								<figcaption>
-									<strong>Gallery WebSites</strong><br>
-									 2009
-								</figcaption>
-							</figure>
-						</li>
-
-						<li class="list__item">
-							<figure class="list__item__inner"><img src="<?php echoPicture($stylesheet_dir,'images/portfolio/p8.png');?> " alt="">
-								<figcaption>
-									<strong>Old Personal Web Site</strong>
-									<br>
-									 2008
-								</figcaption>
-							</figure>
-						</li>
+						<?php
+								endwhile;
+							endif;
+						?>
 					</ul>
 
 				</div>

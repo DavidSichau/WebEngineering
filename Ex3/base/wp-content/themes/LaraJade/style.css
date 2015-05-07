@@ -11,6 +11,10 @@
 				padding: 5rem 0; /* 80 */
 			}
 			
+			h2.headline {
+				color: #1e73be;
+			}
+
 			#header{
 				background-color: #414141;
 				margin: -1.25rem; /* 10 */
